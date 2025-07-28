@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% include 'nav.html' %}
+{% block body %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow rounded border-0">
+        <div class="card-header text-bg-dark">
+          <h4 class="text-white mb-0">Update Link</h4>
+        </div>
+        <div class="card-body bg-white">
+          <form method="POST">
+            {{ form.hidden_tag() }}
+
+            <div class="mb-3">
+              {{ form.title.label(class="form-label fw-bold") }}
+              {{ form.title(class="form-control", placeholder="e.g. My Favorite Tool") }}
+            </div>
+
+            <div class="mb-3">
+              {{ form.url.label(class="form-label fw-bold") }}
+              {{ form.url(class="form-control", placeholder="https://example.com") }}
+            </div>
+
+            <div class="mb-3">
+              {{ form.tags.label(class="form-label fw-bold") }}
+              {{ form.tags(class="form-control", placeholder="e.g. productivity, dev") }}
+              <small class="text-muted">Separate tags with commas</small>
+            </div>
+
+            <div class="d-grid">
+              {{ form.submit(class="btn btn-dark" ,value="Update Link") }}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
